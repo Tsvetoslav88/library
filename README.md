@@ -17,7 +17,7 @@ Bike is a full stack application for Bike managing, consists of:
 
 **Note:** The DB is ready for use, so need additioanl action on it
 
-## Frot-end part
+## Front-end part
 1. Prerequisites
 - [Node JS](https://nodejs.org/en/)
 - [Yarn package manager](https://classic.yarnpkg.com/en/docs/install) (Optional)
