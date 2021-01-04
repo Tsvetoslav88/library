@@ -11,9 +11,8 @@ Bike is a full stack application for Bike managing, consists of:
 
 2 Bulding and runnig
 - Building of the project
- - Go into main folder and run - mvn clean install
- - Or Run directly Spring boot project using IDE
-
+  - Go into main folder and run - mvn clean install
+  - Or Run directly Spring boot project using IDE
 - Load "Bike.postman_collection.json" collection into Postman and run some of the requests
 
 Note: The DB is ready for use, so need additioanl action on it
