@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "af45efd2-51c0-4a36-9267-b2d2181e94df",
+		"name": "Bike",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Bike",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jeff Miller\",\r\n    \"email\": \"jeff@bikes.com\",\r\n    \"model\": \"Globo MTB 29 Full Suspension\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/bikes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bikes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bikes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/bikes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bikes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Particular Bike",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/bikes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bikes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
