@@ -24,6 +24,7 @@ Bike is a full stack application for Bike managing, consists of:
 - Angular CLI
 
 2. Building and runnig
+
 **Note:** Check if the back-end part is up and runnig
 
 - Build of the project - `npm install`
