@@ -23,9 +23,9 @@ Bike is a full stack application for Bike managing, consists of:
 - [Yarn package manager](https://classic.yarnpkg.com/en/docs/install) (Optional)
 - Angular CLI
 
-2. Building and runnig
-
 **Note:** Check if the back-end part is up and runnig
+
+2. Building and runnig
 
 - Build of the project - `npm install`
 - Run the project - `npm start`
