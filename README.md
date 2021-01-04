@@ -35,4 +35,6 @@ Bike is a full stack application for Bike managing, consists of:
   - http://localhost:4200/server/api/v1/bikes - Bikes screen
   - http://localhost:4200/admin - Admin screen
   
-
+3. Prod building and runnig
+- Build it - `ng build --prod`
+- Run it and access it - `node server.js`
