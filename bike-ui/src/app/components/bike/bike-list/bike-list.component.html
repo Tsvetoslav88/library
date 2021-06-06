@@ -1,0 +1,21 @@
+<div>
+    List of bikes
+</div>
+<table mdbTable>
+    <thead class="black white-text">
+        <tr>
+            <td>Id</td>
+            <td>Name
+            <td>Details</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bike of bikes$ | async" mdbTableCol>
+            <td>{{ bike.id }}</td>
+            <td>{{ bike.name }}</td>
+            <td>
+                <a [routerLink]="['/bike', bike.id]">Go to details</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Bike } from '../models/bike';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -13,12 +14,12 @@ export class BikeService {
 
   constructor(private http:HttpClient) { }
 
-  getBikes() {
-    return this.http.get('/server/api/v1/bikes')
+  getBikes() : Observable<Bike[]> {
+    return this.http.get<Bike[]>('/server/api/v1/bikes');
   }
 
-  getBike(id: number) {
-    return this.http.get('/server/api/v1/bikes/'+ id);
+  getBike(id: number): Observable<Bike> {
+    return this.http.get<Bike>('/server/api/v1/bikes/'+ id);
   }
 
   createBikeRegistration(bike) {

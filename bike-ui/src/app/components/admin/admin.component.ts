@@ -13,15 +13,15 @@ export class AdminComponent implements OnInit {
   constructor(private bikeService: BikeService) { }
 
   ngOnInit(): void {
-    this.getBikes();
+    // this.getBikes();
   }
 
-  getBikes() {
-    this.bikeService.getBikes().subscribe(
-      data => { this.bikes = data},
-      err => console.error(err),
-      () => console.log('bike loeaded')
-    );
-  }
+  // getBikes() {
+  //   this.bikeService.getBikes().subscribe(
+  //     data => { this.bikes = data},
+  //     err => console.error(err),
+  //     () => console.log('bike loeaded')
+  //   );
+  // }
 
 }
