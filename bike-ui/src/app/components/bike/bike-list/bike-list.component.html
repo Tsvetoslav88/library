@@ -1,12 +1,12 @@
 <div>
     List of bikes
 </div>
-<table mdbTable>
-    <thead class="black white-text">
+<table class="table table-striped">
+    <thead>
         <tr>
-            <td>Id</td>
-            <td>Name
-            <td>Details</td>
+            <td scope="col">Id</td>
+            <td scope="col">Name
+            <td scope="col">Details</td>
         </tr>
     </thead>
     <tbody>
@@ -19,3 +19,9 @@
         </tr>
     </tbody>
 </table>
+
+<p>
+    <ngb-alert [dismissible]="false">
+      <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </ngb-alert>
+  </p>

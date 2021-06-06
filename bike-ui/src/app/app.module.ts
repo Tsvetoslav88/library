@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
 import { BikeListComponent } from './components/bike/bike-list/bike-list.component';
 import { BikeDetailsComponent } from './components/bike/bike-details/bike-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { BikeDetailsComponent } from './components/bike/bike-details/bike-detail
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [BikeService],
   bootstrap: [AppComponent]
