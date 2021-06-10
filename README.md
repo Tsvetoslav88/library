@@ -21,7 +21,10 @@ Bike is a full stack application for Bike managing, consists of:
 1. Prerequisites
 - [Node JS](https://nodejs.org/en/)
 - [Yarn package manager](https://classic.yarnpkg.com/en/docs/install) (Optional)
-- Angular CLI
+- [Ng Bootstrap](https://ng-bootstrap.github.io/#/homeinstall)
+- Angular CLI: 10.1.7
+- Node: 12.18.4
+
 
 **Note:** Check if the back-end part is up and runnig
 

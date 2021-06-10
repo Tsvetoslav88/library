@@ -1,27 +1,41 @@
-<div>
+<!-- <ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="['']">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" [routerLink]="['/bikes/list']">Bikes</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Accessories</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Clothes</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    </li>
+</ul> -->
+
+<div id="list">
     List of bikes
 </div>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <td scope="col">Id</td>
-            <td scope="col">Name
-            <td scope="col">Details</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let bike of bikes$ | async" mdbTableCol>
-            <td>{{ bike.id }}</td>
-            <td>{{ bike.name }}</td>
-            <td>
-                <a [routerLink]="['/bike', bike.id]">Go to details</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<p>
-    <ngb-alert [dismissible]="false">
-      <strong>Warning!</strong> Better check yourself, you're not looking too good.
-    </ngb-alert>
-  </p>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td scope="col">Id</td>
+                <td scope="col">Name
+                <td scope="col">Details</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bike of bikes$ | async" mdbTableCol>
+                <td>{{ bike.id }}</td>
+                <td>{{ bike.name }}</td>
+                <td>
+                    <a [routerLink]="['/bike', bike.id]">Go to details</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

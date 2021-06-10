@@ -1,43 +1,27 @@
-<div class="container">
-    <form [formGroup]="bikeform" (ngSubmit)="submitRegistration()" novalidate>
-      <div *ngIf="validMessage != ''">
-        <h3 class="has-info">{{validMessage}}</h3>
-      </div>
-      <div class="form-group">
-        <label>Buyer Name</label>
-        <input type="text" class="form-control" formControlName="name" required autofocus/>
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" class="form-control" formControlName="email" required/>
-      </div>
-      <div class="form-group">
-        <label>Phone</label>
-        <input type="text" class="form-control" formControlName="phone" required/>
-      </div>
-      <div class="form-group">
-        <label>Bike Model</label>
-        <select class="form-control" formControlName="model" required>
-          <option value="">Please select a bike</option>
-          <option *ngFor="let m of models"
-                  [value]="m">
-                  {{m}}
-          </option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Bike Serial Number</label>
-        <input type="text" class="form-control" formControlName="serialNumber" required/>
-      </div>
-      <div class="form-group">
-        <label>Purchase Price</label>
-        <input type="text" class="form-control" formControlName="purchasePrice" required/>
-      </div>
-      <div class="form-group">
-        <label>Purchase Date</label>
-        <input type="text" class="form-control" formControlName="purchaseDate" required/>
-      </div>
-  
-      <button type="submit" class="btn btn-primary" >Submit</button>
-    </form>
-  </div>  
+<!-- <ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" [routerLink]="['']">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/bikes/list']">Bikes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Accessories</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Clothes</a>
+  </li>
+  <li class="nav-item" >
+    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" >Disabled</a>
+  </li>
+</ul> -->
+
+
+<div class="wrapper">
+  <div>
+    <img src="/assets/images/The-Bike-Shop-Logo-200-slimC.png" alt="images" class="logo">
+  </div>
+  <div>
+    In the bike shop you can find out bike, accessoaries and cloths for you favorite sport.
+  </div>
+</div>

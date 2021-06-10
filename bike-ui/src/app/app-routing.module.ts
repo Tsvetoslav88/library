@@ -9,8 +9,7 @@ import { ViewRegistrationComponent } from './components/view-registration/view-r
 const routes: Routes = [
   {
     path: '', 
-    redirectTo: 'bikes/list', 
-    pathMatch: 'full'
+    component: HomeComponent
   },
   {
     path: 'bikes/list',
@@ -27,7 +26,8 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
-  }
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

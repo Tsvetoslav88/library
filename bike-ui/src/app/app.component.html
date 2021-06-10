@@ -1,4 +1,27 @@
-<div style="text-align: center;">
-  <!-- <h1>Bike register system</h1> -->
-</div>
-<router-outlet></router-outlet>
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true }">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/bikes/list']" routerLinkActive='active'>Bikes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" [routerLinkActive]="['active']">Accessories</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" [routerLinkActive]="['active']">Clothes</a>
+  </li>
+  <li class="nav-item" id="user">
+    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" [routerLinkActive]="['active']">Loginb</a>
+  </li>
+  <li class="nav-item" id="user">
+    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" [routerLinkActive]="['active']">Register</a>
+  </li>
+  <li class="nav-item" >
+    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" [routerLinkActive]="['active']">Register</a>
+  </li>
+</ul>
+
+<!-- <div style="text-align: center;">
+</div>-->
+<router-outlet></router-outlet> 

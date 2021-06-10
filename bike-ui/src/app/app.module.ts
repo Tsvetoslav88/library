@@ -4,14 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BikeService } from './services/bike.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
 import { BikeListComponent } from './components/bike/bike-list/bike-list.component';
 import { BikeDetailsComponent } from './components/bike/bike-details/bike-details.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BikeRegistrationComponent } from './components/bike/bike-registration/bike-registration.component';
+import { BikeService } from './services/bike/bike.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     ViewRegistrationComponent,
     BikeListComponent,
-    BikeDetailsComponent
+    BikeDetailsComponent,
+    BikeRegistrationComponent
   ],
   imports: [
     BrowserModule,

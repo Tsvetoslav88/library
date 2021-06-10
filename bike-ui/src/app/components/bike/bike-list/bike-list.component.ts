@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Bike } from 'src/app/models/bike';
-import { BikeService } from 'src/app/services/bike.service';
+import { BikeService } from 'src/app/services/bike/bike.service';
 
 @Component({
   selector: 'app-bike-list',
