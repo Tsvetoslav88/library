@@ -4,6 +4,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import { BikeDetailsComponent } from './components/bike/bike-details/bike-details.component';
 import { BikeListComponent } from './components/bike/bike-list/bike-list.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { RegisterComponent } from './components/user/register/register.component';
 import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
 
 const routes: Routes = [
@@ -27,7 +29,15 @@ const routes: Routes = [
     path: 'admin',
     component: AdminComponent
   },
-  { path: '**', redirectTo: '' }
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
