@@ -17,9 +17,9 @@ export class BikeDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       console.log(params.get('id'))
-      this.bikeService.getBike(Number(params.get('id'))).subscribe(c => {
-        console.log(c);
-        this.bike = c;
+      this.bikeService.getBike(Number(params.get('id'))).subscribe(bike => {
+        console.log(bike);
+        this.bike = bike;
       })
     });
   }

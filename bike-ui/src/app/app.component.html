@@ -12,21 +12,17 @@
     <a class="nav-link" href="#" [routerLinkActive]="['active']">Clothes</a>
   </li>
   <li *ngIf="!userStoreSerivce.isLoggedIn()" class="nav-item  ml-auto">
-    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" [routerLinkActive]="['active']">Register</a>
+    <a class="nav-link" [routerLink]="['/register']" routerLinkActive='active'>Register</a>
   </li>
   <li *ngIf="!userStoreSerivce.isLoggedIn()" class="nav-item">
     <a class="nav-link" [routerLink]="['/login']" routerLinkActive='active'>Login</a>
   </li>
   <li *ngIf="userStoreSerivce.isLoggedIn()" class="nav-item  ml-auto">
-    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" [routerLinkActive]="['active']">{{userStoreSerivce.username}}</a>
+    <a class="nav-link">{{userStoreSerivce.username}}</a>
   </li>
   <li *ngIf="userStoreSerivce.isLoggedIn()" class="nav-item">
     <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" [routerLinkActive]="['active']">Logout</a>
   </li>
 </ul>
-
-<span>
-  {{userStoreSerivce.isLoggedIn()}}
-</span>
 
 <router-outlet></router-outlet> 

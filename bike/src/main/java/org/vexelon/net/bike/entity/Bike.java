@@ -1,4 +1,4 @@
-package org.vexelon.net.bike.models;
+package org.vexelon.net.bike.entity;
 
 import java.math.BigDecimal;
 import java.sql.Date;

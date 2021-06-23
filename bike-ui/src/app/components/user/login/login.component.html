@@ -1,4 +1,4 @@
-<h3>{{message}}</h3>
+<!-- <h3>{{message}}</h3> -->
 <div class="form-group">
   <form (ngSubmit)="login()">
     <div class="user-name">
@@ -21,5 +21,7 @@
     </div>
     <button type="submit">Login</button>
   </form>
-
+  <p>
+    <ngb-alert *ngIf="errorMessage" type="custom" [dismissible]="false">{{errorMessage}}</ngb-alert>
+  </p>
 </div>
