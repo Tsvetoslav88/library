@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Bike } from 'src/app/models/bike';
 import { BikeService } from 'src/app/services/bike/bike.service';
+import { UserStoreService } from 'src/app/services/user/user-store.service';
 
 @Component({
   selector: 'app-bike-details',
@@ -12,7 +13,9 @@ export class BikeDetailsComponent implements OnInit {
 
   public bike: Bike;
 
-  constructor(private bikeService: BikeService, private route: ActivatedRoute) { }
+  constructor(private bikeService: BikeService, 
+              private route: ActivatedRoute, 
+              public userStoreSerivce: UserStoreService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {

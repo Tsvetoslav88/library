@@ -1,33 +1,9 @@
-<!-- <div id="list">
-    List of bikes
-</div>
-<div class="container">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <td scope="col">Id</td>
-                <td scope="col">Name
-                <td scope="col">Details</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let bike of bikes$ | async" mdbTableCol>
-                <td>{{ bike.id }}</td>
-                <td>{{ bike.name }}</td>
-                <td>
-                    <a [routerLink]="['/bike', bike.id]">Go to details</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div> -->
 <table class="table table-striped">
     <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Bike Name</th>
             <th scope="col">Bike Model</th>
-            <th scope="col">Bike price</th>
         </tr>
     </thead>
     <tbody>
@@ -37,7 +13,6 @@
             <td>
                 {{ bike.model }}
             </td>
-            <td>{{ bike.purchasePrice}}</td>
             <td>
                 <a [routerLink]="['/bike', bike.id]">Go to details</a>
             </td>
@@ -49,10 +24,4 @@
     <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
         (pageChange)="refreshBikes()">
     </ngb-pagination>
-
-    <!-- <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
-      <option [ngValue]="2">2 items per page</option>
-      <option [ngValue]="4">4 items per page</option>
-      <option [ngValue]="6">6 items per page</option>
-    </select> -->
 </div>
