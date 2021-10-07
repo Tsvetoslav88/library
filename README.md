@@ -10,12 +10,18 @@ Bike is a full stack application for Bike managing, consists of:
 - [Postman](https://www.postman.com/downloads/)
 
 2. Bulding and runnig
-- Building of the project
-  - Go into main folder and run - `mvn clean install`
-  - Or Run directly Spring boot project using IDE
+   - Build and run as a standalone application
+     - Build project from using Maven - `mvn clean install`
+     - Execute already built jar file = `java -jar target/bike-0.0.1-SNAPSHOT.jar`
+   - Build and run as a docker image
+     -  Build docker file - `docker build -t bike:latest .`
+     -  Run already built docker file - `docker run -d -p 9090:9090 -t bike:latest`
+
+
+3. Testing APIs
 - Load `Bike.postman_collection.json` collection into Postman and run some of the requests
 
-**Note:** The DB is ready for use, so need additioanl action on it
+**Note:** The Sqlite DB automationly created and populated with predefined data.
 
 ## Front-end part
 1. Prerequisites
@@ -29,9 +35,8 @@ Bike is a full stack application for Bike managing, consists of:
 **Note:** Check if the back-end part is up and runnig
 
 2. Building and runnig
-
-- Build of the project - `npm install`
-- Run the project - `npm start`
+   _Build of the project - `npm install`
+   _Run the project - `npm start`
 
 - Access the SPA
   - http://localhost:4200 - Main screen
