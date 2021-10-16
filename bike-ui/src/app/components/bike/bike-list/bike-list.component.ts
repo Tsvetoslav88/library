@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Bike } from 'src/app/models/bike';
 import { BikeService } from 'src/app/services/bike/bike.service';
+import { UserStoreService } from 'src/app/services/user/user-store.service';
 
 @Component({
   selector: 'app-bike-list',
@@ -15,7 +16,8 @@ export class BikeListComponent implements OnInit {
   collectionSize;
   bikesSlice: Bike[];
 
-  constructor(private bikeService: BikeService) {
+  constructor(private bikeService: BikeService, 
+              private userStoreSerivce: UserStoreService) {
 
   }
 
@@ -32,6 +34,20 @@ export class BikeListComponent implements OnInit {
     this.bikesSlice = this.bikes
       .map((bike, i) => ({index: i + 1, ...bike}))
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+  }
+
+  deleteBike(bikeId: number) {
+    console.log("Into delete bike method for bike " + bikeId);
+    this.bikeService.deleteBike(bikeId).subscribe(
+      data => {
+        let indexNumber = this.bikes.findIndex(({id}) => id == bikeId);
+        this.bikes.splice(indexNumber, 1);
+        this.refreshBikes();
+      },
+      error => {
+        return Observable.throw(error);
+      }
+    )
   }
 
 }

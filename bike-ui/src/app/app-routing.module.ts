@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminComponent } from './components/admin/admin.component';
+import { AdminComponent } from './components/admin/home/admin.component';
 import { BikeDetailsComponent } from './components/bike/bike-details/bike-details.component';
 import { BikeListComponent } from './components/bike/bike-list/bike-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
-import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
+import { ViewRegistrationComponent } from './components/admin/view-registration/view-registration.component';
 
 const routes: Routes = [
   {

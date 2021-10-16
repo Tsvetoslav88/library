@@ -20,7 +20,7 @@ public class UserController {
         if (userRequest.getUsername().equals("Wrong")) {
             return new ResponseEntity<>(UserErrorResponse.builder().message("User '" + userRequest.getUsername() + "' does not exist").build(), HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>(UserSuccessResponse.builder().token("12356").build(), HttpStatus.OK);
+        return new ResponseEntity<>(UserSuccessResponse.builder().token("12356").type(1).build(), HttpStatus.OK);
     }
 
     @PostMapping("/register")

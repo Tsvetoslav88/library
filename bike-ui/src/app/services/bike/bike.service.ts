@@ -26,4 +26,8 @@ export class BikeService {
     let body = JSON.stringify(bike);
     return this.http.post('/server/api/v1/bikes', body, httpOptions);
   }
+
+  deleteBike(id: number) {
+    return this.http.delete('/server/api/v1/bikes/' + id);
+  }
 }

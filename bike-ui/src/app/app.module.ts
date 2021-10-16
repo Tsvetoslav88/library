@@ -4,19 +4,20 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminComponent } from './components/admin/admin.component';
+import { AdminComponent } from './components/admin/home/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
+import { ViewRegistrationComponent } from './components/admin/view-registration/view-registration.component';
 import { BikeListComponent } from './components/bike/bike-list/bike-list.component';
 import { BikeDetailsComponent } from './components/bike/bike-details/bike-details.component';
-import { BikeRegistrationComponent } from './components/bike/bike-registration/bike-registration.component';
+import { BikeRegistrationComponent } from './components/admin/bike-registration/bike-registration.component';
 import { BikeService } from './services/bike/bike.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 import { UserService } from './services/user/user.service';
 import { UserStoreService } from './services/user/user-store.service';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
+import { BikeManagementComponent } from './components/admin/bike-management/bike-management.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RegisterComponent } from './components/user/register/register.component
     BikeDetailsComponent,
     BikeRegistrationComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    BikeManagementComponent
   ],
   imports: [
     BrowserModule,

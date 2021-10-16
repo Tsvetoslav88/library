@@ -9,4 +9,5 @@ import lombok.Setter;
 @Builder
 public class UserSuccessResponse extends UserBaseResponse {
     private String token;
+    private Integer type;
 }

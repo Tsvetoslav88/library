@@ -7,6 +7,7 @@ export class UserStoreService {
 
   private _token: string = null;
   private _username: string = null;
+  private _type: number = null;
 
   constructor() {
     console.log("User store service initilize");
@@ -20,12 +21,20 @@ export class UserStoreService {
     this._username = username;
   }
 
+  set type(type: number) {
+    this._type = type;
+  }
+
   get token() {
     return this._token;
   }
 
   get username() {
     return this._username;
+  }
+
+  get type() {
+    return this._type;
   }
 
   isLoggedIn() {
