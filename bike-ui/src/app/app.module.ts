@@ -19,6 +19,7 @@ import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { BikeManagementComponent } from './components/admin/bike-management/bike-management.component';
 import { BikeRegistrationGuard } from './guards/bike/bike-registration.guard';
+import { BikeRegistrationDeactivateGuard } from './guards/bike/bike-registration-deactivate.guard';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { BikeRegistrationGuard } from './guards/bike/bike-registration.guard';
     BikeService, 
     UserService, 
     UserStoreService,
-    BikeRegistrationGuard],
+    BikeRegistrationGuard,
+    BikeRegistrationDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

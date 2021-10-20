@@ -9,6 +9,7 @@ import { RegisterComponent } from './components/user/register/register.component
 import { ViewRegistrationComponent } from './components/admin/view-registration/view-registration.component';
 import { BikeRegistrationComponent } from './components/bike/bike-registration/bike-registration.component';
 import { BikeRegistrationGuard } from './guards/bike/bike-registration.guard';
+import { BikeRegistrationDeactivateGuard } from './guards/bike/bike-registration-deactivate.guard';
 
 const routes: Routes = [
   {
@@ -18,7 +19,7 @@ const routes: Routes = [
     path: 'bikes/list', component: BikeListComponent
   },
   {
-    path: 'bike/registration', component: BikeRegistrationComponent, canActivate: [BikeRegistrationGuard]
+    path: 'bike/registration', component: BikeRegistrationComponent, canActivate: [BikeRegistrationGuard], canDeactivate: [BikeRegistrationDeactivateGuard]
   },
   {
     path: 'bike/:id', component: BikeDetailsComponent
