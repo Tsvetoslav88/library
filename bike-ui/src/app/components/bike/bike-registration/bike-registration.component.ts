@@ -19,7 +19,9 @@ export class BikeRegistrationComponent implements OnInit {
   bikeform: FormGroup;
   validMessage: string = "";
 
-  constructor(private bikeService: BikeService) { }
+  constructor(private bikeService: BikeService) {
+    console.log("Bike Registration Component");
+   }
 
   ngOnInit(): void {
     this.bikeform = new FormGroup({

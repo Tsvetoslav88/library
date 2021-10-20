@@ -30,8 +30,13 @@
     </tbody>
 </table>
 
-<div class="d-flex justify-content-between p-2">
+
+<div id="bike-pagination" class="d-flex justify-content-between p-2">
     <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
         (pageChange)="refreshBikes()">
     </ngb-pagination>
+</div>
+
+<div *ngIf="userStoreSerivce.type == 1" id="bike-registration">
+    <a [routerLink]="['/bike/registration']" routerLinkActive='active'><button class="btn-primary" ngbButtonLabel>Register Bike</button></a>
 </div>

@@ -16,8 +16,9 @@ export class BikeListComponent implements OnInit {
   collectionSize;
   bikesSlice: Bike[];
 
-  constructor(private bikeService: BikeService, 
-              private userStoreSerivce: UserStoreService) {
+  constructor(public bikeService: BikeService, 
+              public userStoreSerivce: UserStoreService) {
+    console.log("Bike List");
 
   }
 

@@ -7,35 +7,33 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { ViewRegistrationComponent } from './components/admin/view-registration/view-registration.component';
+import { BikeRegistrationComponent } from './components/bike/bike-registration/bike-registration.component';
+import { BikeRegistrationGuard } from './guards/bike/bike-registration.guard';
 
 const routes: Routes = [
   {
-    path: '', 
-    component: HomeComponent
+    path: '', component: HomeComponent
   },
   {
-    path: 'bikes/list',
-    component: BikeListComponent
+    path: 'bikes/list', component: BikeListComponent
   },
   {
-    path: 'bike/:id',
-    component: BikeDetailsComponent
+    path: 'bike/registration', component: BikeRegistrationComponent, canActivate: [BikeRegistrationGuard]
   },
   {
-    path: 'admin/view/:id',
-    component: ViewRegistrationComponent
+    path: 'bike/:id', component: BikeDetailsComponent
   },
   {
-    path: 'admin',
-    component: AdminComponent
+    path: 'admin/view/:id', component: ViewRegistrationComponent
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'admin', component: AdminComponent
   },
   {
-    path: 'register',
-    component: RegisterComponent
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'register', component: RegisterComponent
   },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
