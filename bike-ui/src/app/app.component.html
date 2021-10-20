@@ -1,5 +1,28 @@
-<div style="text-align: center;">
-  <h1>Bike register system</h1>
-</div>
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true }">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/bikes/list']" routerLinkActive='active'>Bikes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" [routerLinkActive]="['active']">Accessories</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" [routerLinkActive]="['active']">Clothes</a>
+  </li>
+  <li *ngIf="!userStoreSerivce.isLoggedIn()" class="nav-item  ml-auto">
+    <a class="nav-link" [routerLink]="['/register']" routerLinkActive='active'>Register</a>
+  </li>
+  <li *ngIf="!userStoreSerivce.isLoggedIn()" class="nav-item">
+    <a class="nav-link" [routerLink]="['/login']" routerLinkActive='active'>Login</a>
+  </li>
+  <li *ngIf="userStoreSerivce.isLoggedIn()" class="nav-item  ml-auto">
+    <a class="nav-link">{{userStoreSerivce.username}}</a>
+  </li>
+  <li *ngIf="userStoreSerivce.isLoggedIn()" class="nav-item">
+    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" [routerLinkActive]="['active']">Logout</a>
+  </li>
+</ul>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> 

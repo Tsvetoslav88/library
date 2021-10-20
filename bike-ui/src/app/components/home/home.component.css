@@ -1,0 +1,14 @@
+.wrapper {
+    text-align: center;
+}
+
+.logo {
+    width: 500px
+}
+
+#user {
+    float: right;
+    color: green;
+    text-align: right;
+}
+
