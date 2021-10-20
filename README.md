@@ -1,5 +1,5 @@
 # Bike
-Bike is a full stack application for Bike managing, consists of
+Bike is a full stack application for Bike managing, consists of:
 
 ## Back-end part
 1. Prerequisites
