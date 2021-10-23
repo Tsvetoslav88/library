@@ -1,5 +1,5 @@
 # Bike
-Bike is a full stack application for Bike managing, consists of
+Bike is a project consist of Back-end part(Spring boot REST API) and Front-end(Angular). 
 
 ## Back-end part
 1. Prerequisites
