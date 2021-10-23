@@ -15,19 +15,19 @@ export class BikeService {
   constructor(private http:HttpClient) { }
 
   getBikes() : Observable<Bike[]> {
-    return this.http.get<Bike[]>('/server/api/v1/bikes');
+    return this.http.get<Bike[]>('/api/v1/bikes');
   }
 
   getBike(id: number): Observable<Bike> {
-    return this.http.get<Bike>('/server/api/v1/bikes/'+ id);
+    return this.http.get<Bike>('/api/v1/bikes/'+ id);
   }
 
   createBikeRegistration(bike) {
     let body = JSON.stringify(bike);
-    return this.http.post('/server/api/v1/bikes', body, httpOptions);
+    return this.http.post('/api/v1/bikes', body, httpOptions);
   }
 
   deleteBike(id: number) {
-    return this.http.delete('/server/api/v1/bikes/' + id);
+    return this.http.delete('/api/v1/bikes/' + id);
   }
 }

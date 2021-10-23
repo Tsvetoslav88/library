@@ -13,7 +13,7 @@ export class UserService {
 
   login(username: string, password: string): Observable<any> {
     
-    return this.http.post('/server/api/v1/user/login', {
+    return this.http.post('/api/v1/user/login', {
       username: username,
       password: password
     }).pipe(map((resp: any) => {
@@ -28,7 +28,7 @@ export class UserService {
 
 
   register(username: string, password: string): Observable<any> {
-    return this.http.post('/server/api/v1/user/register', {
+    return this.http.post('/api/v1/user/register', {
       username: username,
       password: password
     }).pipe(map((resp: any) => {
