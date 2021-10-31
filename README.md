@@ -45,7 +45,7 @@ frontend. It supports multiple HTTP REST methods like GET, POST, PUT and
 DELETE 
 
 Full list of available REST endpoints could be found in Swagger UI,
-which could be called using link: **http://localhost:9090/api/swagger-ui.html**
+which could be called using link: **http://localhost:9090/swagger-ui.html**
 
 This app is put in Docker container and its definition can be found
 in a file *bike/Dockerfile*. 
@@ -102,5 +102,5 @@ It can be entered using link: **http://localhost:4200/**
   - http://localhost:4200/admin - Admin screen
   
 3. Prod building and runnig
-  - Build it - `ng build --prod`
-  - Run it and access it - `node server.js`
+   - Build it - `ng build --prod`
+   - Run it and access it - `node server.js`
