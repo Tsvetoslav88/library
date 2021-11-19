@@ -20,9 +20,9 @@
 </table>
 <ul class="nav nav-pills">
     <li class="nav-item">
-       <a class="nav-link" [routerLink]="['/bikes/list']" routerLinkActive='active'>Back to Bikes</a>
+        <a class="nav-link" [routerLink]="['/bikes/list']" routerLinkActive='active'><button class="btn-primary" ngbButtonLabel>Back to Bikes</button></a>
     </li>
     <li *ngIf="userStoreSerivce.isLoggedIn()" class="nav-item  ml-auto">
-        <a class="nav-link" [routerLink]="['/buy']">Buy it</a>
+        <a class="nav-link" [routerLink]="['/buy']"><button class="btn-primary" ngbButtonLabel>Buy it</button></a>
     </li>
 </ul>

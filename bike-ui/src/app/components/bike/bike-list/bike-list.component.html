@@ -14,7 +14,7 @@
                 {{ bike.model }}
             </td>
             <td>
-                <a [routerLink]="['/bike', bike.id]">Go to details</a>
+                <a [routerLink]="['/bike', bike.id]"><button class="btn-primary" ngbButtonLabel>Go to details</button></a>
             </td>
             <td *ngIf="userStoreSerivce.type == 1">
                 <div class="btn-group btn-group-toggle">
@@ -22,7 +22,7 @@
                       <input type="button" ngbButton [(ngModel)]="model.left"> Left (pre-checked)
                     </label> -->
                     <!-- <label class="btn-primary" ngbButtonLabel> -->
-                        <button (click)="deleteBike(bike.id)">Delete</button>
+                        <button class="btn-primary" ngbButtonLabel (click)="deleteBike(bike.id)">Delete</button>
                     <!-- </label> -->
                 </div>
             </td>
