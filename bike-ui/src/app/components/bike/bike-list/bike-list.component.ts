@@ -39,16 +39,19 @@ export class BikeListComponent implements OnInit {
 
   deleteBike(bikeId: number) {
     console.log("Into delete bike method for bike " + bikeId);
-    this.bikeService.deleteBike(bikeId).subscribe(
-      data => {
-        let indexNumber = this.bikes.findIndex(({id}) => id == bikeId);
-        this.bikes.splice(indexNumber, 1);
-        this.refreshBikes();
-      },
-      error => {
-        return Observable.throw(error);
-      }
-    )
+    if(confirm("Are you sure you want to delete the bike?")) {
+      this.bikeService.deleteBike(bikeId).subscribe(
+        data => {
+          let indexNumber = this.bikes.findIndex(({id}) => id == bikeId);
+          this.bikes.splice(indexNumber, 1);
+          this.refreshBikes();
+        },
+        error => {
+          return Observable.throw(error);
+        }
+      )
+    }
+    
   }
 
 }

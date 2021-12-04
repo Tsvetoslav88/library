@@ -22,7 +22,7 @@
                       <input type="button" ngbButton [(ngModel)]="model.left"> Left (pre-checked)
                     </label> -->
                     <!-- <label class="btn-primary" ngbButtonLabel> -->
-                        <button class="btn-primary" ngbButtonLabel (click)="deleteBike(bike.id)">Delete</button>
+                        <button class="btn-primary" ngbButtonLabel [ngStyle]="{'background-color': '#f44336'}" (click)="deleteBike(bike.id)">Delete</button>
                     <!-- </label> -->
                 </div>
             </td>
