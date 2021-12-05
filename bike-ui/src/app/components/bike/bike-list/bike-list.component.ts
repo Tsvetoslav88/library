@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Bike } from 'src/app/models/bike';
 import { BikeService } from 'src/app/services/bike/bike.service';
+import { NotificationService } from 'src/app/services/common/notification.service';
 import { UserStoreService } from 'src/app/services/user/user-store.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class BikeListComponent implements OnInit {
   bikesSlice: Bike[];
 
   constructor(public bikeService: BikeService, 
-              public userStoreSerivce: UserStoreService) {
+              public userStoreSerivce: UserStoreService,
+              private  notificationService: NotificationService) {
     console.log("Bike List");
 
   }
@@ -37,19 +39,23 @@ export class BikeListComponent implements OnInit {
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
-  deleteBike(bikeId: number) {
-    console.log("Into delete bike method for bike " + bikeId);
-    if(confirm("Are you sure you want to delete the bike?")) {
-      this.bikeService.deleteBike(bikeId).subscribe(
+  deleteBike(bike: Bike) {
+    console.log("Into delete bike method for bike " + bike.id);
+    if(confirm("Are you sure you want to delete the bike '" + bike.name + "' ?")) {
+      this.bikeService.deleteBike(bike.id).subscribe(
         data => {
-          let indexNumber = this.bikes.findIndex(({id}) => id == bikeId);
+          this.notificationService.showSuccess("'" + bike.name + "' deleted!");
+          console.log("Inside data");
+          let indexNumber = this.bikes.findIndex(({id}) => id == bike.id);
           this.bikes.splice(indexNumber, 1);
           this.refreshBikes();
+          
         },
         error => {
           return Observable.throw(error);
         }
       )
+      console.log("Outside service call");
     }
     
   }

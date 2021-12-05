@@ -20,6 +20,10 @@ import { RegisterComponent } from './components/user/register/register.component
 import { BikeManagementComponent } from './components/admin/bike-management/bike-management.component';
 import { BikeRegistrationGuard } from './guards/bike/bike-registration.guard';
 import { BikeRegistrationDeactivateGuard } from './guards/bike/bike-registration-deactivate.guard';
+// import { ToastrService } from './services/common/toastr.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { NotificationService } from './services/common/notification.service';
 
 @NgModule({
   declarations: [
@@ -40,14 +44,18 @@ import { BikeRegistrationDeactivateGuard } from './guards/bike/bike-registration
     HttpClientModule,
     ReactiveFormsModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [
     BikeService, 
     UserService, 
     UserStoreService,
     BikeRegistrationGuard,
-    BikeRegistrationDeactivateGuard],
+    BikeRegistrationDeactivateGuard,
+    NotificationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
