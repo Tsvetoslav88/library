@@ -20,10 +20,10 @@ import { RegisterComponent } from './components/user/register/register.component
 import { BikeManagementComponent } from './components/admin/bike-management/bike-management.component';
 import { BikeRegistrationGuard } from './guards/bike/bike-registration.guard';
 import { BikeRegistrationDeactivateGuard } from './guards/bike/bike-registration-deactivate.guard';
-// import { ToastrService } from './services/common/toastr.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NotificationService } from './services/common/notification.service';
+import { NavbarComponent } from './components/nav/navbar.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { NotificationService } from './services/common/notification.service';
     BikeRegistrationComponent,
     LoginComponent,
     RegisterComponent,
-    BikeManagementComponent
+    BikeManagementComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,6 @@ import { UserStoreService } from './services/user/user-store.service';
 })
 export class AppComponent {
 
-  constructor(public userStoreSerivce: UserStoreService) {}
+  constructor() {}
 
-  title = 'bike-ui';
 }
