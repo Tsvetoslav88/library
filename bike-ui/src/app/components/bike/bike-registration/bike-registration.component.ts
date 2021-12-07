@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { BikeService } from 'src/app/services/bike/bike.service';
 
@@ -19,7 +20,8 @@ export class BikeRegistrationComponent implements OnInit {
   bikeform: FormGroup;
   validMessage: string = "";
 
-  constructor(private bikeService: BikeService) {
+  constructor(private bikeService: BikeService,
+              private router: Router) {
     console.log("Bike Registration Component");
    }
 
@@ -54,5 +56,9 @@ export class BikeRegistrationComponent implements OnInit {
     }
   }
 
+
+  cancel() {
+    this.router.navigate(['/bikes/list']);
+  }
 
 }

@@ -5,6 +5,9 @@
     <li class="nav-item">
       <a class="nav-link" [routerLink]="['/bikes/list']" routerLinkActive='active'>Bikes</a>
     </li>
+    <li *ngIf="userStoreSerivce.isLoggedIn()" class="nav-item">
+      <a class="nav-link" [routerLink]="['/bikes/my-bikes']" routerLinkActive='active'>My Bikes</a>
+    </li>
     <li *ngIf="!userStoreSerivce.isLoggedIn()" class="nav-item  ml-auto">
       <a class="nav-link" [routerLink]="['/register']" routerLinkActive='active'>Register</a>
     </li>
