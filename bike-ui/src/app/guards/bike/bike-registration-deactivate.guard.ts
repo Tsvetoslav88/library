@@ -12,7 +12,10 @@ export class BikeRegistrationDeactivateGuard implements CanDeactivate<BikeRegist
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return window.confirm('Do you want to navigate away from this page?');
+      if(component.bikeform.dirty) {
+        return window.confirm('You unsaved changes will be lost. Do you want to navigate away from this page?');
+      }
+    return true;
 
   }
   
