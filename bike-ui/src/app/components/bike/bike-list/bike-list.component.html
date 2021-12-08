@@ -1,42 +1,47 @@
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Bike Name</th>
-            <th scope="col">Bike Model</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let bike of bikesSlice; index as i">
-            <th scope="row">{{ bike.index }}</th>
-            <td scope="row">{{ bike.name }}</td>
-            <td>
-                {{ bike.model }}
-            </td>
-            <td>
-                <a [routerLink]="['/bike', bike.id]"><button class="btn-primary" ngbButtonLabel>Go to details</button></a>
-            </td>
-            <td *ngIf="userStoreSerivce.type == 1">
-                <div class="btn-group btn-group-toggle">
-                    <!-- <label class="btn-primary" ngbButtonLabel>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Bike Name</th>
+                <th scope="col">Bike Model</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bike of bikesSlice; index as i">
+                <th scope="row">{{ bike.index }}</th>
+                <td scope="row">{{ bike.name }}</td>
+                <td>
+                    {{ bike.model }}
+                </td>
+                <td>
+                    <a [routerLink]="['/bike', bike.id]"><button class="btn-primary" ngbButtonLabel>Go to
+                            details</button></a>
+                </td>
+                <td *ngIf="userStoreSerivce.type == 1">
+                    <div class="btn-group btn-group-toggle">
+                        <!-- <label class="btn-primary" ngbButtonLabel>
                       <input type="button" ngbButton [(ngModel)]="model.left"> Left (pre-checked)
                     </label> -->
-                    <!-- <label class="btn-primary" ngbButtonLabel> -->
-                        <button class="btn-primary" ngbButtonLabel [ngStyle]="{'background-color': '#f44336'}" (click)="deleteBike(bike)">Delete</button>
-                    <!-- </label> -->
-                </div>
-            </td>
-        </tr>
-    </tbody>
-</table>
+                        <!-- <label class="btn-primary" ngbButtonLabel> -->
+                        <button class="btn btn-danger" ngbButtonLabel
+                            (click)="deleteBike(bike)">Delete</button>
+                        <!-- </label> -->
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 
-<div id="bike-pagination" class="d-flex justify-content-between p-2">
-    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
-        (pageChange)="refreshBikes()">
-    </ngb-pagination>
-</div>
+    <div id="bike-pagination" class="d-flex justify-content-between p-2">
+        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+            (pageChange)="refreshBikes()">
+        </ngb-pagination>
+    </div>
 
-<div *ngIf="userStoreSerivce.type == 1" id="bike-registration">
-    <a [routerLink]="['/bike/registration']" routerLinkActive='active'><button class="btn-primary" ngbButtonLabel>Register Bike</button></a>
+    <div *ngIf="userStoreSerivce.type == 1" id="bike-registration">
+        <a [routerLink]="['/bike/registration']" routerLinkActive='active'><button class="btn-primary"
+                ngbButtonLabel>Register Bike</button></a>
+    </div>
 </div>

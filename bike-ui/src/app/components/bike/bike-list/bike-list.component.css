@@ -3,10 +3,10 @@
     font-size: 50px;
 }
 #bike-pagination {
-    width: 300px;
+    /* width: 300px; */
     float: left;
 }
 #bike-registration {
     float: right;
-    padding-right: 100px;
+    /* padding-right: 100px; */
 }

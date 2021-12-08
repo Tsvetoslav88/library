@@ -1,28 +1,31 @@
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Bike ID</th>
-            <th scope="col">Bike Name</th>
-            <th scope="col">Bike Model</th>
-            <th scope="col">Bike Serial Number</th>
-            <th scope="col">Purchase Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{bike.id}}</td>
-            <td>{{bike.name}}</td>
-            <td>{{bike.model}}</td>
-            <td>{{bike.serialNumber}}</td>
-            <td>{{bike.purchasePrice}}</td>
-        </tr>
-    </tbody>
-</table>
-<ul class="nav nav-pills">
-    <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/bikes/list']" routerLinkActive='active'><button class="btn-primary" ngbButtonLabel>Back to Bikes</button></a>
-    </li>
-    <li *ngIf="userStoreSerivce.isLoggedIn()" class="nav-item  ml-auto">
-        <a class="nav-link" [routerLink]="['/buy']"><button class="btn-primary" ngbButtonLabel>Buy it</button></a>
-    </li>
-</ul>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Bike ID</th>
+                <th scope="col">Bike Name</th>
+                <th scope="col">Bike Model</th>
+                <th scope="col">Bike Serial Number</th>
+                <th scope="col">Purchase Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{bike.id}}</td>
+                <td>{{bike.name}}</td>
+                <td>{{bike.model}}</td>
+                <td>{{bike.serialNumber}}</td>
+                <td>{{bike.purchasePrice}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/bikes/list']" routerLinkActive='active'><button class="btn btn-secondary"
+                    ngbButtonLabel>Back to Bikes</button></a>
+        </li>
+        <li *ngIf="userStoreSerivce.isLoggedIn()" class="nav-item  ml-auto">
+            <a class="nav-link" [routerLink]="['/buy']"><button class="btn-primary" ngbButtonLabel>Buy it</button></a>
+        </li>
+    </ul>
+</div>
