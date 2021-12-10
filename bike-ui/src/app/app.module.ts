@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NotificationService } from './services/common/notification.service';
 import { NavbarComponent } from './components/nav/navbar.component';
+import { BikeResolver } from './resolvers/bike/bike-resolver.service';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { NavbarComponent } from './components/nav/navbar.component';
   ],
   providers: [
     BikeService, 
+    BikeResolver,
     UserService, 
     UserStoreService,
     BikeRegistrationGuard,

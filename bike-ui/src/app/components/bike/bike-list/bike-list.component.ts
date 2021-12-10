@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { Bike } from 'src/app/models/bike';
 import { BikeService } from 'src/app/services/bike/bike.service';
@@ -19,18 +20,20 @@ export class BikeListComponent implements OnInit {
 
   constructor(public bikeService: BikeService, 
               public userStoreSerivce: UserStoreService,
-              private  notificationService: NotificationService) {
+              private  notificationService: NotificationService,
+              private route:ActivatedRoute) {
     console.log("Bike List");
 
   }
 
   ngOnInit(): void {
-    this.bikeService.getBikes().subscribe(result => {
-      this.bikes = result;
-      this.collectionSize = result.length;
+    this.route.data.subscribe((response: any) => {
+      console.log('Bikes FETCHING', response);
+      this.bikes = response.bikes;
+      this.collectionSize = response.length;
       this.refreshBikes();
+      console.log('Bikes FETCHED');
     });
-
   }
 
   refreshBikes() {

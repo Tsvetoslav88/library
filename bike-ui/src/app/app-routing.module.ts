@@ -10,13 +10,14 @@ import { ViewRegistrationComponent } from './components/admin/view-registration/
 import { BikeRegistrationComponent } from './components/bike/bike-registration/bike-registration.component';
 import { BikeRegistrationGuard } from './guards/bike/bike-registration.guard';
 import { BikeRegistrationDeactivateGuard } from './guards/bike/bike-registration-deactivate.guard';
+import { BikeResolver } from './resolvers/bike/bike-resolver.service';
 
 const routes: Routes = [
   {
     path: '', component: HomeComponent
   },
   {
-    path: 'bikes/list', component: BikeListComponent
+    path: 'bikes/list', component: BikeListComponent, resolve: {bikes: BikeResolver}
   },
   {
     path: 'bike/registration', component: BikeRegistrationComponent, canActivate: [BikeRegistrationGuard], canDeactivate: [BikeRegistrationDeactivateGuard]
