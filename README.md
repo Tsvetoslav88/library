@@ -21,8 +21,10 @@ Instructions how to install **Docker** on [Ubuntu](https://docs.docker.com/insta
 
 
 ### How to run it?
+1. Build back-end project - `mvn clean install`
+2. Build front-end project - `ng build --prod`
 
-An entire application can be ran with a single command in a terminal:
+Now the entire application can be ran with a single command in a terminal:
 
 ```
 $ docker-compose up -d
