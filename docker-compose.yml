@@ -5,19 +5,19 @@ version: '3'
 services:
 
   #Back-end Spring Boot Application
-  bike:
-    #The docker file in bike-app build the jar and provides the docker image with the following name.
-    build: ./bike
-    container_name: bike
+  library:
+    #The docker file in library-app build the jar and provides the docker image with the following name.
+    build: ./library
+    container_name: library
     ports:
       - 9090:9090 # Forward the exposed port 9090 on the container to port 9090 on the host machine
 
 
   #Fron-end Angular Application
-  bike-ui:
-    build: ./bike-ui
-    container_name: bike-ui
+  library-ui:
+    build: ./library-ui
+    container_name: library-ui
     ports:
       - 4200:80
     links:
-      - bike
+      - library
