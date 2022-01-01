@@ -8,23 +8,23 @@ import { AdminComponent } from './components/admin/home/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewRegistrationComponent } from './components/admin/view-registration/view-registration.component';
-import { BikeListComponent } from './components/bike/bike-list/bike-list.component';
-import { BikeDetailsComponent } from './components/bike/bike-details/bike-details.component';
-import { BikeRegistrationComponent } from './components/bike/bike-registration/bike-registration.component';
-import { BikeService } from './services/bike/bike.service';
+import { BookListComponent } from './components/book/book-list/book-list.component';
+import { BookDetailsComponent } from './components/book/book-details/book-details.component';
+import { BookRegistrationComponent } from './components/book/book-registration/book-registration.component';
+import { BookService } from './services/book/book.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 import { UserService } from './services/user/user.service';
 import { UserStoreService } from './services/user/user-store.service';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { BikeManagementComponent } from './components/admin/bike-management/bike-management.component';
-import { BikeRegistrationGuard } from './guards/bike/bike-registration.guard';
-import { BikeRegistrationDeactivateGuard } from './guards/bike/bike-registration-deactivate.guard';
+import { BookRegistrationGuard } from './guards/book/book-registration.guard';
+import { BookRegistrationDeactivateGuard } from './guards/book/book-registration-deactivate.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NotificationService } from './services/common/notification.service';
 import { NavbarComponent } from './components/nav/navbar.component';
-import { BikeResolver } from './resolvers/bike/bike-resolver.service';
+import { BookResolver } from './resolvers/book/book-resolver.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +32,9 @@ import { BikeResolver } from './resolvers/bike/bike-resolver.service';
     AdminComponent,
     HomeComponent,
     ViewRegistrationComponent,
-    BikeListComponent,
-    BikeDetailsComponent,
-    BikeRegistrationComponent,
+    BookListComponent,
+    BookDetailsComponent,
+    BookRegistrationComponent,
     LoginComponent,
     RegisterComponent,
     BikeManagementComponent,
@@ -51,12 +51,12 @@ import { BikeResolver } from './resolvers/bike/bike-resolver.service';
     ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [
-    BikeService, 
-    BikeResolver,
+    BookService, 
+    BookResolver,
     UserService, 
     UserStoreService,
-    BikeRegistrationGuard,
-    BikeRegistrationDeactivateGuard,
+    BookRegistrationGuard,
+    BookRegistrationDeactivateGuard,
     NotificationService
   ],
   bootstrap: [AppComponent]

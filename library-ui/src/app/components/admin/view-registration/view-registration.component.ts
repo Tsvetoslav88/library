@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BikeService } from 'src/app/services/bike/bike.service';
+import { BookService } from 'src/app/services/book/book.service';
 
 @Component({
   selector: 'app-view-registration',
@@ -11,14 +11,14 @@ export class ViewRegistrationComponent implements OnInit {
 
   public bikeReg;
 
-  constructor(private bikeService: BikeService, private route: ActivatedRoute) { }
+  constructor(private bikeService: BookService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getBikeReg(this.route.snapshot.params.id);
   }
 
   getBikeReg(id:number) {
-    this.bikeService.getBike(id).subscribe(
+    this.bikeService.getBook(id).subscribe(
       data => {
         this.bikeReg = data;
       },

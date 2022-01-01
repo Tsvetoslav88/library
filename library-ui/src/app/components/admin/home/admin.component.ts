@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BikeService } from 'src/app/services/bike/bike.service';
+import { BookService } from 'src/app/services/book/book.service';
 
 @Component({
   selector: 'app-admin',
@@ -10,7 +10,7 @@ export class AdminComponent implements OnInit {
 
   public bikes;
 
-  constructor(private bikeService: BikeService) { }
+  constructor(private bikeService: BookService) { }
 
   ngOnInit(): void {
     // this.getBikes();

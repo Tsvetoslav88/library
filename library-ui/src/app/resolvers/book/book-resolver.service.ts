@@ -2,18 +2,18 @@ import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, Resolve } from "@angular/router";
 import { Observable, of } from "rxjs";
 import { catchError, map } from "rxjs/operators";
-import { BikeService } from "../../services/bike/bike.service";
+import { BookService } from "../../services/book/book.service";
 
 @Injectable()
-export class BikeResolver implements Resolve<any> {
-    constructor(private bikeService: BikeService) {
+export class BookResolver implements Resolve<any> {
+    constructor(private bookService: BookService) {
 
     }
 
     resolve(route: ActivatedRouteSnapshot): Observable<any> {
-        // return this.bikeService.getBikes().pipe(map(bikes => bikes));
-        console.log('Called Get Bikes in resolver...', route);
-        return this.bikeService.getBikes().pipe(
+        // return this.bookService.getBooks().pipe(map(books => books));
+        console.log('Called Get Books in resolver...', route);
+        return this.bookService.getBooks().pipe(
             catchError(error => {
                 return of('No data');
             })

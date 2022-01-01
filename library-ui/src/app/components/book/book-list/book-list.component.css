@@ -2,11 +2,11 @@
     text-align: center;
     font-size: 50px;
 }
-#bike-pagination {
+#book-pagination {
     /* width: 300px; */
     float: left;
 }
-#bike-registration {
+#book-registration {
     float: right;
     /* padding-right: 100px; */
 }

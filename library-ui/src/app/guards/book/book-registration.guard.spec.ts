@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BikeRegistrationGuard } from './bike-registration.guard';
+import { BookRegistrationGuard } from './book-registration.guard';
 
-describe('BikeRegistrationGuard', () => {
-  let guard: BikeRegistrationGuard;
+describe('BookRegistrationGuard', () => {
+  let guard: BookRegistrationGuard;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    guard = TestBed.inject(BikeRegistrationGuard);
+    guard = TestBed.inject(BookRegistrationGuard);
   });
 
   it('should be created', () => {

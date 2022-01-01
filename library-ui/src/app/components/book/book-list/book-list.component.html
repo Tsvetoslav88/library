@@ -3,19 +3,19 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Bike Name</th>
-                <th scope="col">Bike Model</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Book Author</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let bike of bikesSlice; index as i">
-                <th scope="row">{{ bike.index }}</th>
-                <td scope="row">{{ bike.name }}</td>
+            <tr *ngFor="let book of booksSlice; index as i">
+                <th scope="row">{{ book.index }}</th>
+                <td scope="row">{{ book.title }}</td>
                 <td>
-                    {{ bike.model }}
+                    {{ book.author }}
                 </td>
                 <td>
-                    <a [routerLink]="['/bike', bike.id]"><button class="btn-primary" ngbButtonLabel>Go to
+                    <a [routerLink]="['/book', book.id]"><button class="btn-primary" ngbButtonLabel>Go to
                             details</button></a>
                 </td>
                 <td *ngIf="userStoreSerivce.type == 1">
@@ -25,7 +25,7 @@
                     </label> -->
                         <!-- <label class="btn-primary" ngbButtonLabel> -->
                         <button class="btn btn-danger" ngbButtonLabel
-                            (click)="deleteBike(bike)">Delete</button>
+                            (click)="deleteBook(book)">Delete</button>
                         <!-- </label> -->
                     </div>
                 </td>
@@ -34,14 +34,14 @@
     </table>
 
 
-    <div id="bike-pagination" class="d-flex justify-content-between p-2">
+    <div id="book-pagination" class="d-flex justify-content-between p-2">
         <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
-            (pageChange)="refreshBikes()">
+            (pageChange)="refreshBooks()">
         </ngb-pagination>
     </div>
 
-    <div *ngIf="userStoreSerivce.type == 1" id="bike-registration">
-        <a [routerLink]="['/bike/registration']" routerLinkActive='active'><button class="btn-primary"
-                ngbButtonLabel>Register Bike</button></a>
+    <div *ngIf="userStoreSerivce.type == 1" id="book-registration">
+        <a [routerLink]="['/book/registration']" routerLinkActive='active'><button class="btn-primary"
+                ngbButtonLabel>Register Book</button></a>
     </div>
 </div>

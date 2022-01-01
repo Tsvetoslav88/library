@@ -1,0 +1,35 @@
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Description</th>
+                <th scope="col">Purchase Price</th>
+                <th scope="col">Release Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{book.id}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.genre}}</td>
+                <td>{{book.description}}</td>
+                <td>{{book.purchasePrice}}</td>
+                <td>{{book.releaseDate}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/books/list']" routerLinkActive='active'><button class="btn btn-secondary"
+                    ngbButtonLabel>Back to Books</button></a>
+        </li>
+        <li *ngIf="userStoreSerivce.isLoggedIn()" class="nav-item  ml-auto">
+            <a class="nav-link" [routerLink]="['/buy']"><button class="btn-primary" ngbButtonLabel>Buy it</button></a>
+        </li>
+    </ul>
+</div>

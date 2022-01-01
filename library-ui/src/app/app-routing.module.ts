@@ -1,29 +1,29 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './components/admin/home/admin.component';
-import { BikeDetailsComponent } from './components/bike/bike-details/bike-details.component';
-import { BikeListComponent } from './components/bike/bike-list/bike-list.component';
+import { BookDetailsComponent } from './components/book/book-details/book-details.component';
+import { BookListComponent } from './components/book/book-list/book-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { ViewRegistrationComponent } from './components/admin/view-registration/view-registration.component';
-import { BikeRegistrationComponent } from './components/bike/bike-registration/bike-registration.component';
-import { BikeRegistrationGuard } from './guards/bike/bike-registration.guard';
-import { BikeRegistrationDeactivateGuard } from './guards/bike/bike-registration-deactivate.guard';
-import { BikeResolver } from './resolvers/bike/bike-resolver.service';
+import { BookRegistrationComponent } from './components/book/book-registration/book-registration.component';
+import { BookRegistrationGuard } from './guards/book/book-registration.guard';
+import { BookRegistrationDeactivateGuard } from './guards/book/book-registration-deactivate.guard';
+import { BookResolver } from './resolvers/book/book-resolver.service';
 
 const routes: Routes = [
   {
     path: '', component: HomeComponent
   },
   {
-    path: 'bikes/list', component: BikeListComponent, resolve: {bikes: BikeResolver}
+    path: 'books/list', component: BookListComponent, resolve: {books: BookResolver}
   },
   {
-    path: 'bike/registration', component: BikeRegistrationComponent, canActivate: [BikeRegistrationGuard], canDeactivate: [BikeRegistrationDeactivateGuard]
+    path: 'book/registration', component: BookRegistrationComponent, canActivate: [BookRegistrationGuard], canDeactivate: [BookRegistrationDeactivateGuard]
   },
   {
-    path: 'bike/:id', component: BikeDetailsComponent
+    path: 'book/:id', component: BookDetailsComponent
   },
   {
     path: 'admin/view/:id', component: ViewRegistrationComponent

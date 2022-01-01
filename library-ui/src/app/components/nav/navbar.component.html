@@ -3,10 +3,10 @@
       <a class="nav-link" [routerLink]="['']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true }">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/bikes/list']" routerLinkActive='active'>Bikes</a>
+      <a class="nav-link" [routerLink]="['/books/list']" routerLinkActive='active'>Books</a>
     </li>
     <li *ngIf="userStoreSerivce.isLoggedIn()" class="nav-item">
-      <a class="nav-link" [routerLink]="['/bikes/my-bikes']" routerLinkActive='active'>My Bikes</a>
+      <a class="nav-link" [routerLink]="['/books/my-books']" routerLinkActive='active'>My Books</a>
     </li>
     <li *ngIf="!userStoreSerivce.isLoggedIn()" class="nav-item  ml-auto">
       <a class="nav-link" [routerLink]="['/register']" routerLinkActive='active'>Register</a>

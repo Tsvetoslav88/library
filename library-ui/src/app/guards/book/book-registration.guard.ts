@@ -7,7 +7,7 @@ import { UserStoreService } from 'src/app/services/user/user-store.service';
 @Injectable({
   providedIn: 'root'
 })
-export class BikeRegistrationGuard implements CanActivate {
+export class BookRegistrationGuard implements CanActivate {
 
   constructor(public userStoreSerivce: UserStoreService,
     private router: Router,
@@ -16,12 +16,12 @@ export class BikeRegistrationGuard implements CanActivate {
   }
 
   canActivate(): boolean {
-    console.log('BikeRegistrationGuard#canActivate called');
+    console.log('BookRegistrationGuard#canActivate called');
     if(this.userStoreSerivce.type == 1) {
       return true;
     }
     console.log('AuthGuard#canActivate not authorized to access page');
-    this.router.navigate(['/bikes/list']);
+    this.router.navigate(['/books/list']);
     this.notificationService.showError("You are not authorized to access this page!");
     return false;
   }
