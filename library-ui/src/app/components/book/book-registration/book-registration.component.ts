@@ -56,7 +56,7 @@ export class BookRegistrationComponent implements OnInit {
 
 
   cancel() {
-    this.router.navigate(['/bikes/list']);
+    this.router.navigate(['/books/list']);
   }
 
 }

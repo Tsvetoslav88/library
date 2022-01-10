@@ -13,7 +13,8 @@ html {
     font-family: 'Courier New', sans-serif;
     font-weight: normal;
     font-size: 1.5em;
-    background: linear-gradient(150deg,#D5E3F1 15%,#FFFBD9 70%,#FFDFCB 94%);
+    background: linear-gradient(150deg,#d5e8f1 15%,#d9ffe6 70%,#fff1cb 94%);
+    /* background: linear-gradient(135deg, orange 60%, cyan); */
   }
   
   h1 {
@@ -24,3 +25,6 @@ html {
     border: 1px solid #2F465D;
   }
   
+  .default-margin {
+    margin-left: 2%;
+  }
