@@ -7,4 +7,4 @@ VALUES (1, 'Head First Design Pattern', 'Bert Bates', 'IT', 'Java Design Pattern
 -- INSERT INTO book (id, contact, email, model, name, phone, purchase_date, purchase_price)
 -- VALUES (3, 1, 'dave@books.com', 'Globo Time Trial Blade', 'Dave Warren', '563-891-5555', 4419619200000, '2100');
 
-INSERT INTO hibernate_sequence (next_val) VALUES (2);
+-- INSERT INTO hibernate_sequence (next_val) VALUES (2);

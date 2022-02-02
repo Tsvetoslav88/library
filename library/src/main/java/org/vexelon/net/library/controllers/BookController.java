@@ -1,13 +1,14 @@
 package org.vexelon.net.library.controllers;
 
-import java.util.List;
-
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.vexelon.net.library.entity.Book;
 import org.vexelon.net.library.repositories.BookRepository;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/books")
@@ -17,25 +18,26 @@ public class BookController {
 	private BookRepository bookRepository;
 
 	@GetMapping
-	public List<Book> list() {
-		return bookRepository.findAll();
+	public ResponseEntity<List<Book>> list() {
+		return ResponseEntity.ok(bookRepository.findAll());
 	}
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.OK)
 	@ApiOperation(value = "Create Book")
-	public void create(@RequestBody Book book) {
-		bookRepository.save(book);
+	public ResponseEntity<Long> create(@RequestBody Book book) {
+		return ResponseEntity.ok(bookRepository.save(book).getId());
 	}
 
 
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public void delete(@PathVariable("id") long id) {
-		bookRepository.deleteById(id);}
+	public ResponseEntity<Long> delete(@PathVariable("id") long id) {
+		return ResponseEntity.ok(id);
+	}
 	
 	@GetMapping("/{id}")
-	public Book get(@PathVariable("id") long id) {
-		return bookRepository.getOne(id);
+	public ResponseEntity<Book> get(@PathVariable("id") long id) {
+		return ResponseEntity.ok(bookRepository.getOne(id));
 	}
 }
