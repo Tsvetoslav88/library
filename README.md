@@ -1,4 +1,4 @@
-## Bike
+# Bike
 Bike is a project for managing of bike. It consists of Back-end part(Spring boot REST API) and Front-end(Angular). The idea of the project is to demonstrate how Angular and Spring boot work together.
 
 It provides folloing functionality: 
@@ -11,8 +11,9 @@ The entry point for a user is a website which is available under the address: ht
 
 ---
 
-### Start up information
+# Start up information
 
+## Docker
 In order to run this application you need to install two tools: **Docker** & **Docker Compose**.
 
 Instructions how to install **Docker** on [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/), [Windows](https://docs.docker.com/docker-for-windows/install/) , [Mac](https://docs.docker.com/docker-for-mac/install/) .
@@ -36,10 +37,41 @@ If you want to stop it use following command:
 $ docker-compose down
 ```
 
----
-### Development information
+## Heroku
+1. If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+`heroku login`
 
-#### Bike(REST API)
+2. Create new Heroku applications
+   - library
+     - in library folder - `heroku create`
+     - rename the application - `heroku apps:rename --app floating-sea-59474 personal-bookstore`
+
+   - library-ui
+     - in library-ui folder - `heroku create`
+     - rename the application - `heroku apps:rename --app floating-sea-59474 personal-bookstore-ui`
+   
+3. Create a new Git repository
+Initialize a git repository in a new or existing directory
+   - `cd library/` or `cd library-ui`
+   - `git init`
+   - `heroku git:remote -a {{app-name}}`
+
+4. Deploy your application
+Commit your code to the repository and deploy it to Heroku using Git.
+   -  `git add .`
+   - `git commit -am "make it better"`
+   - `git push heroku master`
+
+5. Update in library-ui prod env(`environment.prod.t`) pointing to back-end heroku URL (`baseUrl`)
+
+## Standalone project
+1. Library server (Back-end) --> Run the Spring boot project in current IDE
+
+2. Library UI (Front-end) --> Run Angular project using following command - `npm run local`
+---
+# Development information
+
+## Bike(REST API)
 
 This is a Spring Boot (Java) based application that connects with a
 database that and expose the REST endpoints that can be consumed by
@@ -73,7 +105,7 @@ in a file *bike/Dockerfile*.
 **Note:** The Sqlite DB automationly created and populated with predefined data.
 
 
-#### Bike-ui(Front-end)
+## Bike-ui(Front-end)
 This is a real endpoint for a user where they can review and manipulate their
 bikes. It consumes the REST API endpoints provided by
 *bike*.
