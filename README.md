@@ -64,7 +64,10 @@ Commit your code to the repository and deploy it to Heroku using Git.
 
 5. Update in library-ui prod env(`environment.prod.t`) pointing to back-end heroku URL (`baseUrl`)
 
+## Standalone project
+1. Library server (Back-end) --> Run the Spring boot project in current IDE
 
+2. Library UI (Front-end) --> Run Angular project using following command - `npm run local`
 ---
 # Development information
 
