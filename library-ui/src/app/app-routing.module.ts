@@ -14,7 +14,7 @@ import { BookResolver } from './resolvers/book/book-resolver.service';
 
 const routes: Routes = [
   {
-    path: '', component: HomeComponent
+    path: '', component: BookListComponent, resolve: {books: BookResolver}
   },
   {
     path: 'books/list', component: BookListComponent, resolve: {books: BookResolver}

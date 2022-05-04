@@ -10,3 +10,14 @@
     float: right;
     /* padding-right: 100px; */
 }
+img {
+    height: 300px;
+    width: -moz-available;
+    padding: .5rem 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    img {
+        display: none;    
+    }
+}
