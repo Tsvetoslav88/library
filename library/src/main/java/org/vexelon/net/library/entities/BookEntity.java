@@ -1,19 +1,21 @@
-package org.vexelon.net.library.entity;
+package org.vexelon.net.library.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
-@Entity
+@Entity(name = "book")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Getter
 @Setter
-public class Book {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class BookEntity {
 
 	@Id
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,5 +37,8 @@ public class Book {
 
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
 	private Date releaseDate;
-	
+
+	private Integer ratingScore;
+
+	private Integer ratingVoteCount;
 }
