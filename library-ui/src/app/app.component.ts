@@ -8,6 +8,10 @@ import { UserStoreService } from './services/user/user-store.service';
 })
 export class AppComponent {
 
-  constructor() {}
+  constructor(public userStoreService: UserStoreService) {
+    this.userStoreService.username =  localStorage.getItem("userName");
+    this.userStoreService.token =  localStorage.getItem("token");
+    this.userStoreService.type =  Number(localStorage.getItem("type"));
+  }
 
 }

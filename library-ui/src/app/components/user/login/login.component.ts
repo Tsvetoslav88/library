@@ -20,6 +20,9 @@ export class LoginComponent {
     this.userService.login(this.username, this.password)
       .subscribe((resp) => {
         console.log('Successfully logged in');
+        localStorage.setItem('userName', this.username);
+        localStorage.setItem('token', "123");
+        localStorage.setItem('type', "1");
         // this.message = resp.msg;
         this.errorMessage  = '';
         this.router.navigate(['bikes','list'], /*{queryParams: {page: 1}}*/);
