@@ -2,24 +2,27 @@ package org.vexelon.net.library.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.vexelon.net.library.config.LibraryProperties;
 import org.vexelon.net.library.entities.BookEntity;
-import org.vexelon.net.library.exception.BikeNotFoundException;
+import org.vexelon.net.library.exception.BookNotFoundException;
 import org.vexelon.net.library.models.request.CreateBookRequest;
 import org.vexelon.net.library.models.response.BookResponse;
 import org.vexelon.net.library.repositories.BookRepository;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 public class BookService {
 
     private BookRepository bookRepository;
+    private LibraryProperties libraryProperties;
 
     @Autowired
-    public BookService(BookRepository bookRepository) {
+    public BookService(BookRepository bookRepository,
+                       LibraryProperties libraryProperties) {
         this.bookRepository = bookRepository;
+        this.libraryProperties = libraryProperties;
     }
 
     public Long createBook(CreateBookRequest createBookRequest) {
@@ -42,8 +45,10 @@ public class BookService {
                 .collect(Collectors.toList());
     }
 
-    public BookResponse getBookById(long id) throws BikeNotFoundException {
-        BookEntity bookEntity = bookRepository.findById(id).orElseThrow(() -> new BikeNotFoundException("","")); // Define error code and messages
+    public BookResponse getBookById(long id) throws BookNotFoundException {
+
+        BookEntity bookEntity = bookRepository.findById(id)
+                .orElseThrow(() -> new BookNotFoundException("LIBRARY_10001", libraryProperties.getMessages().get("LIBRARY_10001") + id));
 
         return BookResponse.builder()
                 .id(bookEntity.getId())

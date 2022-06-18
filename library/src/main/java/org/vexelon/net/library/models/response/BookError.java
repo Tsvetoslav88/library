@@ -8,7 +8,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BikeError {
+public class BookError {
 
     @JsonProperty(value = "code")
     private String error;

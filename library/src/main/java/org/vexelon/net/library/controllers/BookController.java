@@ -5,11 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.vexelon.net.library.entities.BookEntity;
-import org.vexelon.net.library.exception.BikeNotFoundException;
+import org.vexelon.net.library.exception.BookNotFoundException;
 import org.vexelon.net.library.models.request.CreateBookRequest;
 import org.vexelon.net.library.models.response.BookResponse;
-import org.vexelon.net.library.repositories.BookRepository;
 import org.vexelon.net.library.services.BookService;
 
 import java.util.List;
@@ -45,7 +43,7 @@ public class BookController {
 //	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<BookResponse> get(@PathVariable("id") long id) throws BikeNotFoundException {
+	public ResponseEntity<BookResponse> get(@PathVariable("id") long id) throws BookNotFoundException {
 		return ResponseEntity.ok(bookService.getBookById(id));
 	}
 }

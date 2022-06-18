@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public abstract class BikeException extends Exception {
+public abstract class BookException extends Exception {
     private String errorCode;
     private String errorMessage;
 }
